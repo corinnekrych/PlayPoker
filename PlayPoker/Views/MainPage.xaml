@@ -24,7 +24,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <!--  TODO: change properties for narrow view  -->
-                        <Setter Target="stateTextBox.Text" Value="Narrow Visual State" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
@@ -33,7 +32,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <!--  TODO: change properties for normal view  -->
-                        <Setter Target="stateTextBox.Text" Value="Normal Visual State" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateWide">
@@ -42,7 +40,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <!--  TODO: change properties for wide view  -->
-                        <Setter Target="stateTextBox.Text" Value="Wide Visual State" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -60,15 +57,13 @@
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
-        <StackPanel RelativePanel.Below="pageHeader" HorizontalAlignment="Stretch">
-            <TextBox x:Name="textBox" PlaceholderText="Enter your name" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="16"/>
-            <ListView>
-                <TextBlock Text="session1"/>
-
-            </ListView>
-        </StackPanel>
-            
- 
+        <TextBox x:Name="textBox" PlaceholderText="Enter your name" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="16" RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="pageHeader"/>
+        <ListView RelativePanel.Below="textBox">
+            <TextBlock Text="session1"/>
+            <TextBlock Text="session2"/>
+            <TextBlock Text="session3"/>
+        </ListView>
     </RelativePanel>
 </Page>
 
