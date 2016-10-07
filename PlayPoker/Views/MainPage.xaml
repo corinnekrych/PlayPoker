@@ -60,39 +60,15 @@
             </controls:PageHeader.SecondaryCommands>
 
         </controls:PageHeader>
+        <StackPanel RelativePanel.Below="pageHeader" HorizontalAlignment="Stretch">
+            <TextBox x:Name="textBox" PlaceholderText="Enter your name" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="16"/>
+            <ListView>
+                <TextBlock Text="session1"/>
 
-        <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0"
-                          RelativePanel.AlignLeftWithPanel="True"
-                          RelativePanel.Below="pageHeader">
-
-            <TextBox MinWidth="150" MinHeight="62"
-                     Header="Parameter to pass"
-                     Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     TextWrapping="Wrap">
-                <Interactivity:Interaction.Behaviors>
-                    <!--  enable submit on enter key  -->
-                    <Behaviors:KeyBehavior Key="Enter">
-                        <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
-                    </Behaviors:KeyBehavior>
-                    <!--  focus on textbox when page loads  -->
-                    <Core:EventTriggerBehavior>
-                        <Behaviors:FocusAction />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </TextBox>
-
-        </controls:Resizer>
-
-        <Button x:Name="submitButton"
-                Click="{x:Bind ViewModel.GotoDetailsPage}" Content="Submit"
-                RelativePanel.AlignBottomWith="parameterResizer"
-                RelativePanel.RightOf="parameterResizer" />
-
-        <TextBlock x:Name="stateTextBox" Margin="16,16,0,0"
-                   RelativePanel.AlignLeftWith="parameterResizer"
-                   RelativePanel.Below="parameterResizer"
-                   Text="Current Visual State" />
-
+            </ListView>
+        </StackPanel>
+            
+ 
     </RelativePanel>
 </Page>
 
